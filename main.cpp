@@ -69,7 +69,7 @@ int main(int argc, const char **argv)
 	printf("Reading input %s of size %d\n", ic_name, nx*ny*nz*4);
 	float* data = read_ic_bin(ic_name, nx*ny*nz);
 
-#ifdef DIRECT
+#ifndef STEPWISE
 	diffusion_direct(data, nx, ny, nz, 1.0/nx, 1.0/ny, 1.0/nz, dt, num_steps,
 						dirichlet);
 #else
