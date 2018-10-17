@@ -25,15 +25,15 @@ are
 ```
 
 Where
-- <IC-file> is the path of the file containing the discretized initial condition 
+- `<IC-file>` is the path of the file containing the discretized initial condition 
 stored as a NxNxN array in c-compatible row major format of floating point 
 values
-- <result-file> is the destination file to write the solution of the diffusion
+- `<result-file>` is the destination file to write the solution of the diffusion
 equation to (again in c-compatible row major format of float values)
-- <resolution> is the resolution N of the initial condition from which the 
+- `<resolution>` is the resolution N of the initial condition from which the 
 sampling distances in each direction is calculated as 1/N
-- <numsteps> is the number of timesteps of size <deltat> to execute
-- <BC> is the boundary condition to use 0 for all periodic and 
+- `<numsteps>` is the number of timesteps of size <deltat> to execute
+- `<BC>` is the boundary condition to use 0 for all periodic and 
 1 for Dirichlet in x and periodic in y and z
-- <numgpus> the number of gpus to use
-- <deltat> the size of the time step
+- `<numgpus>` the number of gpus to use
+- `<deltat>` the size of the time step
