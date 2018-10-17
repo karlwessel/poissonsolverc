@@ -26,7 +26,7 @@ void diffusion_direct(float* u, int nx, int ny, int nz,
 	double dx, double dy, double dz, double dt,
 	int num_steps, int dirichlet);
 
-/** Create a plate for solving the Diffusion equation with the passed
+/** Create a plate for solving the diffusion equation with the passed
  * parameters.
  */
 diffusion_plan diffusion_create_plan(int nx, int ny, int nz,
@@ -56,8 +56,7 @@ void diffusion_destroy_plan(diffusion_plan p);
  * The initial condition pointed to by the pointer u is overwritten with the
  * result of the diffusion equation.
  *
- * This method is only there for comparison purposes.  You should use
- * diffusion_direct instead!
+ * This method is only for comparison purposes. Use diffusion_direct instead!
  */
 void diffusion(float* u, int nx, int ny, int nz,
 	double dx, double dy, double dz, double dt,

@@ -34,12 +34,12 @@ typedef struct _poisson_plan {
 void poisson_destroy_plan(poisson_plan p);
 
 /**
- * Execute the passed poisson solver plan for the passed src and write
+ * Execute the passed Poisson solver plan for the passed src and write
  * result to the passed dst.
  *
- * Pointers to src and dst can be the same for inplace calculation.
+ * Pointers to src and dst can be the same for in-place calculation.
  *
- * Src and dst should point to memory at the gpu. The data in src and dst
+ * Src and dst should point to memory at the GPU. The data in src and dst
  * are real values with a padding of two in z direction. So a y-z-slice
  * of size 2 x 3 looks like
  *
@@ -54,7 +54,7 @@ void poisson_destroy_plan(poisson_plan p);
 void poisson_execute_plan(poisson_plan p, void* dst, void* src);
 
 /**
- * Create a plan for solving the poisson equation at the gpu for data with the
+ * Create a plan for solving the Poisson equation at the GPU for data with the
  * passed parameters.
  *
  * nx, ny, nz - number of samples in x-, y- and z-direction
@@ -67,33 +67,33 @@ poisson_plan poisson_create_plan(int nx, int ny, int nz,
 
 /**
  * Copy the passed input data set f at src from the host to the passed
- * dst location at the gpu.
+ * dst location at the GPU.
  *
  * This functions adds the necessary two-padding in z direction when
  * uploading the continous data from the cpu.
  *
- * If the poisson equation is
+ * If the Poisson equation is
  * A*f = g
  * then src points to the data of g.
  */
 void poisson_plan_copy_to_host(poisson_plan p, float* dst, float* src);
 
 /**
- * Copy the passed result data set f at dst from the gpu to the passed
+ * Copy the passed result data set f at dst from the GPU to the passed
  * src location at the host.
  *
  * This functions removes the two-padding in z direction from the result when
- * downloading the data from the gpu.
+ * downloading the data from the GPU.
  *
- * If the poisson equation is
+ * If the Poisson equation is
  * A*f = g
  * then dst points to the data of f.
  */
 void poisson_plan_copy_to_gpu(poisson_plan p, float* dst, float* src);
 
 /**
- * Allocate the space needed by the poisson solver of the passed plan for the
- * input/output data at the gpu.
+ * Allocate the space needed by the Poisson solver of the passed plan for the
+ * input/output data at the GPU.
  *
  * The caller is responsible for freeing the memory when it's not needed
  * anymore.
