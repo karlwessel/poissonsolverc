@@ -2,8 +2,8 @@ Implementation of a Fourier transform based Poissonsolver as well as a solver
 for the Diffusion equation using that Poissonsolver.
 
 Requirements
-- FFTW3 library (package libfftw3-dev under debian)
-- cuda sdk 8.0 or greater (package nvidia-cuda-toolkit under debian)
+- FFTW3 library (package `libfftw3-dev` under debian)
+- cuda sdk 8.0 or greater (package `nvidia-cuda-toolkit` under debian)
 
 
 The source can be compiled with
